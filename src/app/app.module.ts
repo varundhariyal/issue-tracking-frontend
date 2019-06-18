@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { CookieService } from 'ngx-cookie-service';
+import { HttpClientModule } from "@angular/common/http";
 
 
 
@@ -59,6 +60,7 @@ import { ServerErrorViewComponent } from './error-handler/server-error-view/serv
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     ToastrModule.forRoot(),
     //angular material modules
     MatCheckboxModule,
