@@ -1,3 +1,57 @@
-<p>
-  login works!
-</p>
+<nav class="fixed-top navbar navbar-expand-lg navbar-property">
+  <a class="navbar-brand display-4 text-danger" [routerLink]="[ '']">I.T.</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="[ '/login' ]">Login <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="[ '/signup' ]">Signup</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!-- navbar end -->
+
+<!-- jumbotron -->
+<div class="jumbotron jumbotron-fluid bg-prop">
+  <div class="container">
+    <h2 class="display-4">Issue Tracker</h2>
+    <span class="lead">Wanna?<span class="lead typed"></span></span>
+  </div>
+</div>
+<!-- jumbotron end -->
+<!-- login form -->
+<div class="container section-background border-0">
+    <div class="row">
+      <div class="col">
+        <span>Email </span>
+  
+        <label class="sr-only">Email</label>
+  
+        <input type="text" id="email" class="form-control" [(ngModel)]="Email" placeholder="Email"
+          required>
+        <br>
+  
+        <span>Password </span>
+  
+        <label class="sr-only">Password</label>
+  
+        <input type="password" id='pass' class="form-control" [(ngModel)]="Password" placeholder="Password" required>
+  
+        <br>
+        <button data-toggle="tooltip" data-placement="bottom" title="Login" id="login" class="btn btn-lg btn-outline-danger btn-block" type="button"
+          (click)="login()">Login</button>
+         <a [routerLink]="[ '/forget']">Forgot Password?</a> 
+        <div class="text-center">
+          <a [routerLink]="[ '/signup']">Not a member yet?</a>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- end login section -->
