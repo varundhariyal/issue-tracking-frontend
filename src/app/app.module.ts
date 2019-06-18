@@ -46,6 +46,10 @@ import { RouterModule } from '@angular/router';
 import { SignupComponent } from './user-management/signup/signup.component';
 import { NotFoundViewComponent } from './error-handler/not-found-view/not-found-view.component';
 import { ServerErrorViewComponent } from './error-handler/server-error-view/server-error-view.component';
+import { LoginComponent } from './user-management/login/login.component';
+import { UserService } from './user.service';
+import { HomeComponent } from './dashboard/home/home.component';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 
 @NgModule({
@@ -53,10 +57,13 @@ import { ServerErrorViewComponent } from './error-handler/server-error-view/serv
     AppComponent,
     SignupComponent,
     NotFoundViewComponent,
-    ServerErrorViewComponent
+    ServerErrorViewComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
+    DashboardModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
@@ -99,6 +106,8 @@ import { ServerErrorViewComponent } from './error-handler/server-error-view/serv
     RouterModule.forRoot([
       { path: '', redirectTo: 'signup', pathMatch: 'full' },
       { path: 'signup', component: SignupComponent, pathMatch: 'full' },
+      { path: 'login', component: LoginComponent, pathMatch: 'full' },
+      { path: 'home/:userId', component: HomeComponent, pathMatch: 'full' },
       { path: 'notfound', component: NotFoundViewComponent, pathMatch: 'full' },
       { path: 'servererror', component: ServerErrorViewComponent, pathMatch: 'full' },
       { path: '*', component: NotFoundViewComponent, pathMatch: 'full' },
@@ -106,7 +115,7 @@ import { ServerErrorViewComponent } from './error-handler/server-error-view/serv
 
     ])
   ],
-  providers: [CookieService],
+  providers: [CookieService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
