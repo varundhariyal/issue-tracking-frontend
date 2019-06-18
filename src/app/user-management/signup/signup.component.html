@@ -1,3 +1,85 @@
-<p>
-  signup works!
-</p>
+<nav class="fixed-top navbar navbar-expand-lg navbar-property">
+  <a class="navbar-brand display-4 text-danger" [routerLink]="[ '']">I.T.</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="[ '/signup' ]">Signup <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="[ '/login' ]">Login</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!-- navbar end -->
+<br>
+<!-- jumbotron -->
+<div class="jumbotron jumbotron-fluid bg-prop">
+  <div class="container">
+    <h2 class="display-4">Issue Tracker</h2>
+    <span class="lead">Wanna?<span class="lead typed"></span></span>
+  </div>
+</div>
+<!-- jumbotron end -->
+<!-- signup form -->
+<div class="container section-background border-0">
+  <div class="row">
+    <div class="col">
+      <span>FirstName: </span>
+
+      <label for="inputFirstName" class="sr-only">FirstName</label>
+
+      <input type="text" id="inputFirstName" class="form-control" [(ngModel)]="FirstName" placeholder="FirstName"
+        required>
+      <br>
+
+      <span>LastName: </span>
+
+      <label for="inputLastName" class="sr-only">LastName</label>
+
+      <input type="text" id="inputLastName" class="form-control" [(ngModel)]="LastName" placeholder="LastName" required>
+
+      <br>
+
+      <span>Mobile: </span>
+      <label for="inputMobile" class="sr-only">Mobile</label>
+      <input type="number" id="inputMobile" class="form-control" [(ngModel)]="mobileNumber"
+        placeholder="Enter mobile number" required>
+      <br>
+
+      <span>Email: </span>
+
+      <label for="inputEmail" class="sr-only">Email address</label>
+
+      <input type="email" id="inputEmail" class="form-control" [(ngModel)]="Email" placeholder="Email address" required>
+
+      <br>
+
+      <span>Password: </span>
+
+      <label for="inputPassword" class="sr-only">Password</label>
+
+      <input type="password" id="inputPassword" class="form-control" [(ngModel)]="Password" placeholder="Password"
+        required>
+
+      <br>
+
+      <button data-toggle="tooltip" data-placement="bottom" title="Signup" id="signup"
+        class="btn btn-lg btn-outline-danger btn-block" type="button" (click)="signup()">Sign
+        Up</button>
+      <br>
+      <div class="text-center">
+        <a [routerLink]="[ '/login']">Already a member</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- end signup section -->
+
+<!-- footer -->
