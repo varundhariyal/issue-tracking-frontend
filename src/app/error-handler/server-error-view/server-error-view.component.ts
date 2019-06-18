@@ -1,15 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-server-error-view',
   templateUrl: './server-error-view.component.html',
-  styleUrls: ['./server-error-view.component.css']
+  styleUrls: ['./server-error-view.component.css'],
+  providers: [Location]
 })
 export class ServerErrorViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private location: Location) { }
 
   ngOnInit() {
   }
-
+  //go back
+  public goBack = () => {
+    this.location.back()
+  }
 }
